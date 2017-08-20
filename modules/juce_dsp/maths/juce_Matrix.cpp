@@ -277,7 +277,7 @@ String Matrix<ElementType>::toString() const
     StringArray entries;
     int sizeMax = 0;
 
-    auto* p = data.getRawDataPointer();
+    auto* p = data.begin();
 
     for (size_t i = 0; i < rows; ++i)
     {
@@ -306,3 +306,6 @@ String Matrix<ElementType>::toString() const
 
     return result.toString();
 }
+
+template struct dsp::Matrix <float>;
+template struct dsp::Matrix <double>;
